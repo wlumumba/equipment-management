@@ -1,0 +1,30 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2580
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red18\green19\blue24;\red255\green255\blue255;
+\red0\green0\blue0;}
+{\*\expandedcolortbl;;\csgray\c0;\cssrgb\c8627\c9804\c12157;\cssrgb\c100000\c100000\c100000;
+\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww16280\viewh8800\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf2 \CocoaLigature0 # File transfer\
+scp -i ./advanced-swe.cer ./equipment2.txt ubuntu@\cf3 \cb4 \expnd0\expndtw0\kerning0
+\CocoaLigature1 ec2-54-166-253-40.compute-1.amazonaws.com\cf2 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 :~/\
+\
+# SSH\
+ssh -i "advanced-swe.cer" ubuntu@ec2-3-82-209-72.compute-1.amazonaws.com\
+\
+# Import data\
+mysql --local-infile=1 -vv -u root -putsa2022! mysql < enter.sql 2>&1\
+\
+# Set local-infile in sql\
+Set global \cf5 \expnd0\expndtw0\kerning0
+\CocoaLigature1 local_infile=1;\
+\
+https://ec2-54-166-253-40.compute-1.amazonaws.com/\
+user=webuser\
+pass=1TmsVH1HDAX4SlkW\
+\
+# Check logs (php is parsed, so must run to see output)\
+tail -f /var/log/nginx/error.log\
+}
